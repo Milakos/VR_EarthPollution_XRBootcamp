@@ -73,3 +73,13 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+/Earth/Library
+/Earth/Temp
+/Earth/ProjectSettings
+/Earth/obj
+/Earth/Assets/VRTemplateAssets
+/Earth/Assets/XRI
+/Earth/Assets/XR
+/Earth/Assets/TextMesh Pro
+/Earth/Assets/Samples
+/Earth/Assets/Settings
