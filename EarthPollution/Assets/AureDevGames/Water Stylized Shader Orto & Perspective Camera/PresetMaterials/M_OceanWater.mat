@@ -143,9 +143,9 @@ Material:
     - _WaterAlpha: 1
     - _WaterMetallic: 0.5
     - _WaterSmoothness: 0.241
-    - _WaveLength: 4
-    - _WaveSpeed: 0.3
-    - _WaveSteepness: 2
+    - _WaveLength: 1
+    - _WaveSpeed: 0.1
+    - _WaveSteepness: 0.1
     - _WaveStepness: 0.35
     m_Colors:
     - _BaseColor: {r: 0, g: 0.1989687, b: 1.110646, a: 1}

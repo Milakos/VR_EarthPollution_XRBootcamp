@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,12 @@ namespace WaterStylizedShader
         Rigidbody rb;
         int floatersUnderwater;
         bool underwater;
+
+        private void Awake()
+        {
+            floaters[0] = transform.GetChild(0);
+        }
+
         void Start()
         {
             rb = GetComponent<Rigidbody>();
