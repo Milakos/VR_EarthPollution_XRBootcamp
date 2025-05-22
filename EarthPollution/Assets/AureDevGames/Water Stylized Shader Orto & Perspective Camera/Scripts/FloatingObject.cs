@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 namespace WaterStylizedShader
 {
     [RequireComponent(typeof(Rigidbody))]
@@ -22,11 +20,12 @@ namespace WaterStylizedShader
         public float waterHeightVariation = 2f;
         public float waveSpeed = 1.0f;
         public float waterHeight;
-
+    
         Rigidbody rb;
         int floatersUnderwater;
         bool underwater;
-
+        public bool isOnSea = false;
+        public bool isPile = false;
         private void Awake()
         {
             floaters[0] = transform.GetChild(0);
@@ -36,10 +35,27 @@ namespace WaterStylizedShader
         {
             rb = GetComponent<Rigidbody>();
         }
+        
+        private void OnTriggerStay(Collider other)
+        {
+            if(other.gameObject.layer == LayerMask.NameToLayer("Water"))
+                OnSeaDetection(true);
+        }
+
+        public void OnSeaDetection(bool _isOnSea)
+        {
+            isOnSea = _isOnSea;
+        }
 
         // Update is called once per frame
         void FixedUpdate()
         {
+            if (!isPile)
+            {
+                if (!isOnSea) return;
+            }
+            
+            
             waterHeight = baseWaterHeight + Mathf.Sin(Time.time * waveSpeed) * (waterHeightVariation / 2f);
 
             floatersUnderwater = 0;
