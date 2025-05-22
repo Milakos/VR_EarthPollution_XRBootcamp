@@ -37,6 +37,9 @@ public class MoveBoat : MonoBehaviour
     {
         if (!isOnBoard) return;
         
+        steering = 0f;
+        throttle = 0f;
+        
         isPiloting = !isPiloting;
         
         moveHandler.SetActive(!isPiloting); 

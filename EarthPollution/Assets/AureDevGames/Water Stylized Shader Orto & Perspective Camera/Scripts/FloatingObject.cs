@@ -24,7 +24,7 @@ namespace WaterStylizedShader
         Rigidbody rb;
         int floatersUnderwater;
         bool underwater;
-        public bool isOnSea = false;
+        public bool isOnSea = true;
         public bool isPile = false;
         private void Awake()
         {
@@ -50,11 +50,7 @@ namespace WaterStylizedShader
         // Update is called once per frame
         void FixedUpdate()
         {
-            if (!isPile)
-            {
-                if (!isOnSea) return;
-            }
-            
+            if (!isOnSea) return;
             
             waterHeight = baseWaterHeight + Mathf.Sin(Time.time * waveSpeed) * (waterHeightVariation / 2f);
 
